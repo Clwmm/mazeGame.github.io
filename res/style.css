@@ -10,21 +10,21 @@
 body {
     background-color: var(--bccolor);
     text-align: center;
-    margin: 0;
+    margin: 8px;
 }
 
 #maze {
     background-color: var(--maincolor);
     margin-top: 1%;
-    width: 98%;
-    margin-bottom: 5%;
+    width: 90%;
+    margin-bottom: 1%;
 }
 
 #container {
     display: inline-block;
     position: relative;
     width: 70%;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 
 #dummy {
