@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/style.css">
+    <title>HTML CSS JS MAZE</title>
+    <link rel="icon" type="image/x-icon" href="res/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Space+Mono|Muli">
+
+    <script asyns src="https://basicons.xyz/embed.js"></script>
+</head>
+
+<body>
+    <canvas id="maze" width="600" height="600"></canvas>
+    
+    <br>
+    <button onclick="solve()" class="cell">Solve</button>
+    <br>
+    
+    <div id="container">
+        <div id="dummy">
+            <div id="element">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td class="cell arrowUp" id="up" onclick="onclickBox('up')"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="cell" id="left" onclick="onclickBox('left')"></td>
+                        <td></td>
+                        <td class="cell" id="right" onclick="onclickBox('right')"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="cell arrow-down" id="down" onclick="onclickBox('down')"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="res/script.js"></script>
+</body>
+
+</html>
