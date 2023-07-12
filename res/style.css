@@ -11,20 +11,23 @@ body {
     background-color: var(--bccolor);
     text-align: center;
     margin: 8px;
+    display: block;
 }
 
 #maze {
     background-color: var(--maincolor);
     margin-top: 1%;
-    width: 90%;
-    margin-bottom: 1%;
+    width: 50%;
+}
+
+.button-div {
+    width: 100%;
 }
 
 #container {
     display: inline-block;
     position: relative;
-    width: 70%;
-    margin-top: 2%;
+    width: 45%;
 }
 
 #dummy {
@@ -53,6 +56,8 @@ td {
     border: 0.5em solid #2596be;
     box-shadow: 0 0.5em #999;
     background-color: #2596be;
+    width: 33.33%;
+    height: 33.33%;
 }
 
 .cell:active {

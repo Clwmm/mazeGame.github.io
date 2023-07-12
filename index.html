@@ -15,18 +15,15 @@
 <body>
     <canvas id="maze" width="600" height="600"></canvas>
     
-    <br>
-    <button onclick="solve()" class="cell">Solve</button>
-    <br>
-    
     <div id="container">
         <div id="dummy">
             <div id="element">
+                <!-- <button onclick="solve()" class="cell">Solve</button> -->
                 <table>
                     <tr>
                         <td></td>
                         <td class="cell arrowUp" id="up" onclick="onclickBox('up')"></td>
-                        <td></td>
+                        <td class="cell" onclick="solve()">Solve</td>
                     </tr>
                     <tr>
                         <td class="cell" id="left" onclick="onclickBox('left')"></td>

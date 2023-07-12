@@ -33,6 +33,32 @@ var closedSet = [];
 
 var path = [];
 
+// Responsive
+var maze = document.getElementById("maze");
+var container = document.getElementById("container");
+
+function reportWindowSize() {
+    // Change table and maze size
+    if (1.71*window.innerWidth > window.innerHeight) {
+        if (window.innerHeight < 0.53*window.innerWidth) {
+            let per = Math.floor(100*(window.innerHeight / window.innerWidth)) - 3;
+            maze.style.width = per.toString() + "%";
+            container.style.width = per.toString() + "%";
+        }
+        else {
+            maze.style.width = "50%";
+            container.style.width = "45%";
+        }
+    }
+    else {
+        maze.style.width = "98%";
+        container.style.width = "70%";
+    }
+}
+
+window.onresize = reportWindowSize;
+
+
 function drawLine(x1, y1, x2, y2, style = bccolor) {
     ctx.beginPath();
     ctx.strokeStyle = style;
@@ -458,3 +484,21 @@ function onclickBox(dir) {
     checkWin();
 }
 
+document.addEventListener('keydown', function(event) {
+    switch (event.keyCode) {
+        case 38:
+            onclickBox("up");
+            break;
+        case 39:
+            onclickBox("right");
+            break;
+        case 37:
+            onclickBox("left");
+            break;
+        case 40:
+            onclickBox("down");
+            break;
+        default:
+            break;
+    }
+});
