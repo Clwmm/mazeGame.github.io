@@ -38,24 +38,34 @@ var maze = document.getElementById("maze");
 var container = document.getElementById("container");
 
 function reportWindowSize() {
-    // Change table and maze size
-    if (1.71*window.innerWidth > window.innerHeight) {
+    if (window.innerWidth < window.innerHeight)
+    {
+        if (1.45*window.innerWidth < window.innerHeight) {
+            maze.style.width = "87%";
+            container.style.width = "50%";
+        }
+        else {
+            let per = Math.floor(50*(window.innerHeight / window.innerHeight));
+            maze.style.width = per.toString() + "%";
+            container.style.width = per.toString() + "%";
+        }
+    }
+    else {
         if (window.innerHeight < 0.53*window.innerWidth) {
             let per = Math.floor(100*(window.innerHeight / window.innerWidth)) - 3;
+            console.log("Kurwa");
             maze.style.width = per.toString() + "%";
             container.style.width = per.toString() + "%";
         }
         else {
-            maze.style.width = "50%";
+            maze.style.width = "45%";
             container.style.width = "45%";
         }
     }
-    else {
-        maze.style.width = "98%";
-        container.style.width = "70%";
-    }
+    
 }
 
+reportWindowSize()
 window.onresize = reportWindowSize;
 
 

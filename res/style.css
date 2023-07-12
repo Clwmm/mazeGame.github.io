@@ -10,13 +10,13 @@
 body {
     background-color: var(--bccolor);
     text-align: center;
-    margin: 8px;
+    margin: 0;
     display: block;
 }
 
 #maze {
     background-color: var(--maincolor);
-    margin-top: 1%;
+    /*margin-top: 1%;*/
     width: 50%;
 }
 
@@ -27,7 +27,7 @@ body {
 #container {
     display: inline-block;
     position: relative;
-    width: 45%;
+    width: 50%;
 }
 
 #dummy {
