@@ -40,9 +40,9 @@ var container = document.getElementById("container");
 function reportWindowSize() {
     if (window.innerWidth < window.innerHeight)
     {
-        if (1.45*window.innerWidth < window.innerHeight) {
-            maze.style.width = "87%";
-            container.style.width = "50%";
+        if (1.55*window.innerWidth < window.innerHeight) {
+            maze.style.width = "80%";
+            container.style.width = "70%";
         }
         else {
             let per = Math.floor(50*(window.innerHeight / window.innerHeight));
@@ -53,7 +53,6 @@ function reportWindowSize() {
     else {
         if (window.innerHeight < 0.53*window.innerWidth) {
             let per = Math.floor(100*(window.innerHeight / window.innerWidth)) - 3;
-            console.log("Kurwa");
             maze.style.width = per.toString() + "%";
             container.style.width = per.toString() + "%";
         }
@@ -69,6 +68,7 @@ reportWindowSize()
 window.onresize = reportWindowSize;
 
 
+// Drawing
 function drawLine(x1, y1, x2, y2, style = bccolor) {
     ctx.beginPath();
     ctx.strokeStyle = style;
@@ -95,6 +95,7 @@ function clear() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+// Class
 class Vec2 {
     constructor(x, y) {
         this.x = x;
@@ -229,7 +230,6 @@ function drawPath() {
     for (let x = 0; x < path.length; ++x) {
         if (x == 0) {
             from = path[x].pos;
-            //drawLine(from.x + cellSize/2, from.y + cellSize/2, mazeWidth*cellSize, mazeHeigth*cellSize - cellSize/2, "red");
         }
         else {
             to = path[x].pos;
@@ -237,7 +237,6 @@ function drawPath() {
             from = path[x].pos;
         }
     }
-    //drawLine(from.x + cellSize/2, from.y + cellSize/2, 0, cellSize/2, "red");
 }
 
 function getRandomInt(max) {
@@ -360,6 +359,7 @@ function solve() {
         return;
     }
 
+    // Clear previous sets
     openSet = [];
     closedSet = [];
     path = [];
